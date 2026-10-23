@@ -1,0 +1,61 @@
+{
+  "customers": 4338,
+  "repeat_customers": 2845,
+  "repeat_rate": 0.6558,
+  "median_gap_days": 22.0,
+  "avg_gap_days": 40.0,
+  "cohorts": 13,
+  "m1_retention": 0.2271,
+  "churn_customers": 602,
+  "churn_gmv": 678131.91,
+  "rfm": [
+    {
+      "segment": "重要价值",
+      "customers": 1181.0,
+      "customer_share": 0.2722,
+      "gmv": 5936836.02,
+      "gmv_share": 0.6662,
+      "avg_gmv": 5026.96
+    },
+    {
+      "segment": "一般保持",
+      "customers": 1169.0,
+      "customer_share": 0.2695,
+      "gmv": 1370449.69,
+      "gmv_share": 0.1538,
+      "avg_gmv": 1172.33
+    },
+    {
+      "segment": "已流失",
+      "customers": 1150.0,
+      "customer_share": 0.2651,
+      "gmv": 542347.31,
+      "gmv_share": 0.0609,
+      "avg_gmv": 471.61
+    },
+    {
+      "segment": "沉睡",
+      "customers": 374.0,
+      "customer_share": 0.0862,
+      "gmv": 417659.74,
+      "gmv_share": 0.0469,
+      "avg_gmv": 1116.74
+    },
+    {
+      "segment": "重要挽留",
+      "customers": 212.0,
+      "customer_share": 0.0489,
+      "gmv": 389666.73,
+      "gmv_share": 0.0437,
+      "avg_gmv": 1838.05
+    },
+    {
+      "segment": "新客户",
+      "customers": 252.0,
+      "customer_share": 0.0581,
+      "gmv": 254448.41,
+      "gmv_share": 0.0286,
+      "avg_gmv": 1009.72
+    }
+  ]
+}

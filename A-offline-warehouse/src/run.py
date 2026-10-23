@@ -51,6 +51,13 @@ def stage_raw_to_parquet() -> Path:
         frames.append(df)
     df = pd.concat(frames, ignore_index=True)
     df.columns = [c.strip() for c in df.columns]
+    # InvoiceNo 里既有数字也有 "C" 开头的退货单，必须统一成字符串
+    for _c in ("InvoiceNo", "StockCode", "Description", "CustomerID", "Country"):
+        if _c in df.columns:
+            df[_c] = df[_c].astype("string")
+    for _c in ("Quantity", "UnitPrice"):
+        if _c in df.columns:
+            df[_c] = pd.to_numeric(df[_c], errors="coerce")
     df.to_parquet(out, index=False)
     step(f"合并 {len(df):,} 行 -> {out.name}")
     return out

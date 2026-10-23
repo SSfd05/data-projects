@@ -27,7 +27,7 @@ FROM dim_order;
 CREATE OR REPLACE TABLE ads_customer_summary AS
 SELECT
     customer_id,
-    COUNT(*)                          AS orders,
+    COUNT(DISTINCT invoice_no)        AS orders,   -- 注意：count(*) 数的是明细行，不是订单
     ROUND(SUM(amount), 2)             AS gmv,
     MIN(invoice_time)                 AS first_order_time,
     MAX(invoice_time)                 AS last_order_time,

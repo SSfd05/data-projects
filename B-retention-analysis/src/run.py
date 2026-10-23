@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """留存与复购分析：cohort 留存矩阵、复购间隔、RFM 分层、流失预警。
 
 运行：python src/run.py
@@ -42,6 +42,12 @@ def resolve_parquet() -> Path:
             frames.append(df)
         df = pd.concat(frames, ignore_index=True)
         df.columns = [c.strip() for c in df.columns]
+        for _c in ("InvoiceNo", "StockCode", "Description", "CustomerID", "Country"):
+            if _c in df.columns:
+                df[_c] = df[_c].astype("string")
+        for _c in ("Quantity", "UnitPrice"):
+            if _c in df.columns:
+                df[_c] = pd.to_numeric(df[_c], errors="coerce")
         df.to_parquet(own, index=False)
         _log(f"已转换 {len(df):,} 行 -> {own.name}")
         return own
@@ -130,19 +136,25 @@ def make_figures(retention: pd.DataFrame, gaps: pd.Series, rfm: pd.DataFrame) ->
     pivot = retention.pivot_table(
         index="first_month", columns="month_no", values="retention_rate", aggfunc="first"
     ).sort_index()
+    sizes = retention.groupby("first_month")["cohort_customers"].max()
+    # 样本太少的 cohort 噪声极大（首尾两个月最典型），剔除
+    pivot = pivot.loc[[i for i in pivot.index if sizes.get(i, 0) >= 100]]
     pivot = pivot.iloc[:, :13]
-    fig, ax = plt.subplots(figsize=(9.2, 4.4))
-    im = ax.imshow(pivot.values, cmap="Blues", aspect="auto", vmin=0, vmax=1)
+    # M0 恒为 100%，会污染色阶，计算分位数时排除掉
+    _vals = pivot.drop(columns=[c for c in pivot.columns if c == 0], errors="ignore").values
+    vmax = max(float(np.nanpercentile(_vals, 95)), 0.4)
+    fig, ax = plt.subplots(figsize=(9.6, 4.6))
+    im = ax.imshow(pivot.values, cmap="Blues", aspect="auto", vmin=0, vmax=vmax)
     ax.set_xticks(range(pivot.shape[1]))
     ax.set_xticklabels([f"M{c}" for c in pivot.columns], fontsize=8)
     ax.set_yticks(range(len(pivot)))
-    ax.set_yticklabels([str(i)[:7] for i in pivot.index], fontsize=8)
+    ax.set_yticklabels([f"{str(i)[:7]} (n={int(sizes.get(i, 0))})" for i in pivot.index], fontsize=8)
     for i in range(pivot.shape[0]):
         for j in range(pivot.shape[1]):
             v = pivot.values[i, j]
             if pd.notna(v):
                 ax.text(j, i, f"{v*100:.0f}", ha="center", va="center",
-                        fontsize=7, color="white" if v > 0.55 else "#333")
+                        fontsize=7, color="white" if v > vmax * 0.6 else "#333")
     ax.set_title("同期群留存矩阵（行=首购月，列=第 N 月，值=留存率 %）", fontsize=10.5)
     fig.colorbar(im, ax=ax, fraction=0.02, pad=0.01)
     fig.savefig(FIGS / "fig01_cohort_heatmap.png", bbox_inches="tight")
@@ -225,3 +237,5 @@ def write_findings(m: dict, retention: pd.DataFrame) -> None:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+

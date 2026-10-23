@@ -35,5 +35,7 @@ SELECT
 FROM dim_first_purchase f
 JOIN fact_activity a USING (customer_id)
 JOIN cohort_size   s USING (first_month)
-GROUP BY 1, 2, 3, 4
+GROUP BY f.first_month,
+         DATE_DIFF('month', f.first_month, a.act_month),
+         s.cohort_customers
 ORDER BY 1, 2;
