@@ -1,0 +1,52 @@
+{
+  "total_rows": 9554778,
+  "clean_rows": 9199850,
+  "clean_ratio": 0.9629,
+  "bad_distance": 215764,
+  "bad_duration": 2801,
+  "bad_amount": 117187,
+  "out_of_range": 21,
+  "avg_duration_min": 15.6,
+  "avg_distance_miles": 4.15,
+  "avg_speed_mph": 14.7,
+  "payment": [
+    {
+      "payment_type": 1.0,
+      "trips": 7181202.0,
+      "share": 0.7806,
+      "avg_tip": 4.19,
+      "tip_rate": 0.2255
+    },
+    {
+      "payment_type": 2.0,
+      "trips": 1266985.0,
+      "share": 0.1377,
+      "avg_tip": 0.0,
+      "tip_rate": 0.0
+    },
+    {
+      "payment_type": 0.0,
+      "trips": 649626.0,
+      "share": 0.0706,
+      "avg_tip": 1.04,
+      "tip_rate": 0.0547
+    },
+    {
+      "payment_type": 4.0,
+      "trips": 70780.0,
+      "share": 0.0077,
+      "avg_tip": 0.01,
+      "tip_rate": 0.0007
+    },
+    {
+      "payment_type": 3.0,
+      "trips": 31257.0,
+      "share": 0.0034,
+      "avg_tip": 0.01,
+      "tip_rate": 0.0003
+    }
+  ],
+  "peak_hour": 18,
+  "busiest_zone": 161,
+  "daily_trips_mean": 101097.0
+}
