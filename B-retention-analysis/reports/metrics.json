@@ -11,35 +11,35 @@
   "rfm": [
     {
       "segment": "重要价值",
-      "customers": 1181.0,
-      "customer_share": 0.2722,
-      "gmv": 5936836.02,
-      "gmv_share": 0.6662,
-      "avg_gmv": 5026.96
+      "customers": 1172.0,
+      "customer_share": 0.2702,
+      "gmv": 5919503.19,
+      "gmv_share": 0.6643,
+      "avg_gmv": 5050.77
     },
     {
       "segment": "一般保持",
-      "customers": 1169.0,
-      "customer_share": 0.2695,
-      "gmv": 1370449.69,
-      "gmv_share": 0.1538,
-      "avg_gmv": 1172.33
+      "customers": 1175.0,
+      "customer_share": 0.2709,
+      "gmv": 1385157.61,
+      "gmv_share": 0.1554,
+      "avg_gmv": 1178.86
     },
     {
       "segment": "已流失",
-      "customers": 1150.0,
-      "customer_share": 0.2651,
-      "gmv": 542347.31,
-      "gmv_share": 0.0609,
-      "avg_gmv": 471.61
+      "customers": 1132.0,
+      "customer_share": 0.2609,
+      "gmv": 530488.49,
+      "gmv_share": 0.0595,
+      "avg_gmv": 468.63
     },
     {
       "segment": "沉睡",
-      "customers": 374.0,
-      "customer_share": 0.0862,
-      "gmv": 417659.74,
-      "gmv_share": 0.0469,
-      "avg_gmv": 1116.74
+      "customers": 392.0,
+      "customer_share": 0.0904,
+      "gmv": 430052.37,
+      "gmv_share": 0.0483,
+      "avg_gmv": 1097.07
     },
     {
       "segment": "重要挽留",
@@ -51,11 +51,11 @@
     },
     {
       "segment": "新客户",
-      "customers": 252.0,
-      "customer_share": 0.0581,
-      "gmv": 254448.41,
-      "gmv_share": 0.0286,
-      "avg_gmv": 1009.72
+      "customers": 255.0,
+      "customer_share": 0.0588,
+      "gmv": 256539.51,
+      "gmv_share": 0.0288,
+      "avg_gmv": 1006.04
     }
   ]
 }
