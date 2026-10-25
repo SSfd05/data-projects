@@ -1,96 +1,96 @@
 {
   "rows_ods": 541909,
-  "rows_dwd": 396337,
-  "clean_ratio": 0.7314,
+  "rows_dwd": 522570,
+  "clean_ratio": 0.9643,
   "customers": 4334,
-  "orders": 18402,
-  "gmv": 8761066.65,
-  "aov": 476.09,
+  "orders": 19776,
+  "gmv": 10272178.98,
+  "aov": 519.43,
   "repeat_rate": 0.6527,
-  "return_amount_ratio": 0.1024,
+  "return_amount_ratio": 0.0703,
   "months": 13,
   "top_country": {
     "country": "United Kingdom",
-    "gmv": 7265862.23
+    "gmv": 8749403.33
   },
   "monthly": [
     {
       "stat_month": "2010-12-01",
-      "orders": 1394,
+      "orders": 1551,
       "customers": 884,
-      "gmv": 567490.72
+      "gmv": 789258.83
     },
     {
       "stat_month": "2011-01-01",
-      "orders": 983,
+      "orders": 1081,
       "customers": 739,
-      "gmv": 564026.64
+      "gmv": 670439.46
     },
     {
       "stat_month": "2011-02-01",
-      "orders": 992,
+      "orders": 1093,
       "customers": 757,
-      "gmv": 443346.02
+      "gmv": 507866.54
     },
     {
       "stat_month": "2011-03-01",
-      "orders": 1312,
+      "orders": 1441,
       "customers": 973,
-      "gmv": 584562.85
+      "gmv": 690061.6
     },
     {
       "stat_month": "2011-04-01",
-      "orders": 1139,
+      "orders": 1235,
       "customers": 853,
-      "gmv": 455266.91
+      "gmv": 515469.66
     },
     {
       "stat_month": "2011-05-01",
-      "orders": 1544,
+      "orders": 1668,
       "customers": 1054,
-      "gmv": 660481.9
+      "gmv": 740021.48
     },
     {
       "stat_month": "2011-06-01",
-      "orders": 1390,
+      "orders": 1525,
       "customers": 990,
-      "gmv": 654432.56
+      "gmv": 737683.99
     },
     {
       "stat_month": "2011-07-01",
-      "orders": 1321,
+      "orders": 1452,
       "customers": 946,
-      "gmv": 592731.9
+      "gmv": 688252.67
     },
     {
       "stat_month": "2011-08-01",
-      "orders": 1267,
+      "orders": 1340,
       "customers": 933,
-      "gmv": 636807.24
+      "gmv": 735370.22
     },
     {
       "stat_month": "2011-09-01",
-      "orders": 1739,
+      "orders": 1818,
       "customers": 1259,
-      "gmv": 940900.81
+      "gmv": 1028345.38
     },
     {
       "stat_month": "2011-10-01",
-      "orders": 1903,
+      "orders": 2005,
       "customers": 1361,
-      "gmv": 1005642.9
+      "gmv": 1103330.92
     },
     {
       "stat_month": "2011-11-01",
-      "orders": 2642,
+      "orders": 2751,
       "customers": 1660,
-      "gmv": 1142145.77
+      "gmv": 1451578.98
     },
     {
       "stat_month": "2011-12-01",
-      "orders": 776,
+      "orders": 816,
       "customers": 614,
-      "gmv": 513230.43
+      "gmv": 614499.25
     }
   ]
 }
