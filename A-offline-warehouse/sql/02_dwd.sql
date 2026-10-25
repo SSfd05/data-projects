@@ -28,6 +28,7 @@ SELECT
     ANY_VALUE(description_raw) AS product_name
 FROM ods_retail
 WHERE stock_code IS NOT NULL
+  AND stock_code NOT IN ('POST', 'DOT', 'M', 'C2', 'BANK CHARGES', 'PADS', 'D', 'S')
 GROUP BY 1;
 
 -- ---------- 事实表：订单明细 ----------
@@ -54,4 +55,8 @@ WHERE quantity    > 0
   AND unit_price  > 0
   AND customer_id_raw IS NOT NULL
   AND invoice_no  IS NOT NULL
-  AND stock_code  IS NOT NULL;
+  AND stock_code  IS NOT NULL
+  -- 5. 剔除「不是商品」的编号：邮费、运费、手工调整、银行手续费
+  --    它们有金额但没实物，混进商品维度会让 GMV 虚高约 1.7%，
+  --    也会让「单品销售额排名」出现 POST（邮费）这种荒唐结果
+  AND stock_code NOT IN ('POST', 'DOT', 'M', 'C2', 'BANK CHARGES', 'PADS', 'D', 'S');

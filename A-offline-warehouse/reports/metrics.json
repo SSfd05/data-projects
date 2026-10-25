@@ -1,96 +1,96 @@
 {
   "rows_ods": 541909,
-  "rows_dwd": 397884,
-  "clean_ratio": 0.7342,
-  "customers": 4338,
-  "orders": 18532,
-  "gmv": 8911407.9,
-  "aov": 480.87,
-  "repeat_rate": 0.6558,
-  "return_amount_ratio": 0.1006,
+  "rows_dwd": 396337,
+  "clean_ratio": 0.7314,
+  "customers": 4334,
+  "orders": 18402,
+  "gmv": 8761066.65,
+  "aov": 476.09,
+  "repeat_rate": 0.6527,
+  "return_amount_ratio": 0.1024,
   "months": 13,
   "top_country": {
     "country": "United Kingdom",
-    "gmv": 7308391.55
+    "gmv": 7265862.23
   },
   "monthly": [
     {
       "stat_month": "2010-12-01",
-      "orders": 1400,
-      "customers": 885,
-      "gmv": 572713.89
+      "orders": 1394,
+      "customers": 884,
+      "gmv": 567490.72
     },
     {
       "stat_month": "2011-01-01",
-      "orders": 987,
-      "customers": 741,
-      "gmv": 569445.04
+      "orders": 983,
+      "customers": 739,
+      "gmv": 564026.64
     },
     {
       "stat_month": "2011-02-01",
-      "orders": 997,
-      "customers": 758,
-      "gmv": 447137.35
+      "orders": 992,
+      "customers": 757,
+      "gmv": 443346.02
     },
     {
       "stat_month": "2011-03-01",
-      "orders": 1321,
-      "customers": 974,
-      "gmv": 595500.76
+      "orders": 1312,
+      "customers": 973,
+      "gmv": 584562.85
     },
     {
       "stat_month": "2011-04-01",
-      "orders": 1149,
-      "customers": 856,
-      "gmv": 469200.36
+      "orders": 1139,
+      "customers": 853,
+      "gmv": 455266.91
     },
     {
       "stat_month": "2011-05-01",
-      "orders": 1555,
-      "customers": 1056,
-      "gmv": 678594.56
+      "orders": 1544,
+      "customers": 1054,
+      "gmv": 660481.9
     },
     {
       "stat_month": "2011-06-01",
-      "orders": 1393,
-      "customers": 991,
-      "gmv": 661213.69
+      "orders": 1390,
+      "customers": 990,
+      "gmv": 654432.56
     },
     {
       "stat_month": "2011-07-01",
-      "orders": 1331,
-      "customers": 949,
-      "gmv": 600091.01
+      "orders": 1321,
+      "customers": 946,
+      "gmv": 592731.9
     },
     {
       "stat_month": "2011-08-01",
-      "orders": 1280,
-      "customers": 935,
-      "gmv": 645343.9
+      "orders": 1267,
+      "customers": 933,
+      "gmv": 636807.24
     },
     {
       "stat_month": "2011-09-01",
-      "orders": 1755,
-      "customers": 1266,
-      "gmv": 952838.38
+      "orders": 1739,
+      "customers": 1259,
+      "gmv": 940900.81
     },
     {
       "stat_month": "2011-10-01",
-      "orders": 1929,
-      "customers": 1364,
-      "gmv": 1039318.79
+      "orders": 1903,
+      "customers": 1361,
+      "gmv": 1005642.9
     },
     {
       "stat_month": "2011-11-01",
-      "orders": 2657,
-      "customers": 1664,
-      "gmv": 1161817.38
+      "orders": 2642,
+      "customers": 1660,
+      "gmv": 1142145.77
     },
     {
       "stat_month": "2011-12-01",
-      "orders": 778,
-      "customers": 615,
-      "gmv": 518192.79
+      "orders": 776,
+      "customers": 614,
+      "gmv": 513230.43
     }
   ]
 }

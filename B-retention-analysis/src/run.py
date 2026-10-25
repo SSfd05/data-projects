@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """留存与复购分析：cohort 留存矩阵、复购间隔、RFM 分层、流失预警。
 
 运行：python src/run.py
@@ -191,7 +191,8 @@ def make_figures(retention: pd.DataFrame, gaps: pd.Series, rfm: pd.DataFrame) ->
 def write_findings(m: dict, retention: pd.DataFrame) -> None:
     rfm_rows = "\n".join(
         f"| {r['segment']} | {int(r['customers']):,} | {r['customer_share']:.1%} | "
-        f"{r['gmv']:,.0f} | {r['gmv_share']:.1%} |"
+        f"{r['gmv']:,.0f} | {r['gmv_share']:.1%} | {r['avg_gmv']:,.0f} | "
+        f"{r['avg_recency_days']:.0f} | {r['avg_frequency']:.1f} |"
         for r in m["rfm"]
     )
     lines = [
@@ -210,8 +211,8 @@ def write_findings(m: dict, retention: pd.DataFrame) -> None:
         "",
         "## 2. RFM 分层",
         "",
-        "| 分层 | 客户数 | 人数占比 | GMV | GMV 占比 |",
-        "| --- | --- | --- | --- | --- |",
+        "| 分层 | 客户数 | 人数占比 | GMV | GMV 占比 | 人均 GMV | 平均距今(天) | 平均购买次数 |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
         rfm_rows,
         "",
         "## 3. 怎么读留存矩阵",
@@ -230,6 +231,21 @@ def write_findings(m: dict, retention: pd.DataFrame) -> None:
         "运营资源应该向这两层倾斜，而不是全员发券。",
         f"3. 有 {m['churn_customers']:,} 个客户买过两次以上却已经流失，"
         "这是召回成本最低的一批人，优先于拉新。",
+        "",
+        "## 5. 一个容易读错的地方（数据截断）",
+        "",
+        "热力图最下面一两行的留存率会明显偏低，**这不是客户质量差**，而是**观察窗口不够**。",
+        "",
+        "数据到 2011-12-09 结束。最后几批客户（比如 11 月首购的）本来是 12 月才能观察到 M1，",
+        "但 12 月只统计到 9 号，回来的人还没走完，于是 M1 被低估。统计上这叫**右删失**。",
+        "",
+        "正确做法：",
+        "",
+        "- 比较不同 cohort 时，只比观察窗口完整的那几行；",
+        "- 或者把最后 1–2 个 cohort 从对比里剔除；",
+        "- 汇报时说清楚「受数据截止时间影响，末尾 cohort 不可比」。",
+        "",
+        "**这是留存分析最常见的坑**：不处理截断，会把数据问题误判成业务问题。",
         "",
     ]
     (REPORTS / "findings.md").write_text("\n".join(lines), encoding="utf-8")

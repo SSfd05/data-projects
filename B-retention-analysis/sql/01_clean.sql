@@ -17,4 +17,6 @@ FROM src_retail
 WHERE "Quantity"    > 0
   AND "UnitPrice"   > 0
   AND "CustomerID"  IS NOT NULL
-  AND "InvoiceNo"   IS NOT NULL;
+  AND "InvoiceNo"   IS NOT NULL
+  -- 与数仓项目保持同一口径：剔除邮费/运费/手工调整等非商品行
+  AND "StockCode" NOT IN ('POST', 'DOT', 'M', 'C2', 'BANK CHARGES', 'PADS', 'D', 'S');

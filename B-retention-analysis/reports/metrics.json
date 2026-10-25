@@ -1,61 +1,73 @@
 {
-  "customers": 4338,
-  "repeat_customers": 2845,
-  "repeat_rate": 0.6558,
+  "customers": 4334,
+  "repeat_customers": 2829,
+  "repeat_rate": 0.6527,
   "median_gap_days": 22.0,
-  "avg_gap_days": 40.0,
+  "avg_gap_days": 40.2,
   "cohorts": 13,
-  "m1_retention": 0.2271,
-  "churn_customers": 602,
-  "churn_gmv": 678131.91,
+  "m1_retention": 0.2255,
+  "churn_customers": 595,
+  "churn_gmv": 650849.88,
   "rfm": [
     {
       "segment": "重要价值",
-      "customers": 1172.0,
-      "customer_share": 0.2702,
-      "gmv": 5919503.19,
-      "gmv_share": 0.6643,
-      "avg_gmv": 5050.77
+      "customers": 1118.0,
+      "customer_share": 0.258,
+      "gmv": 5779392.66,
+      "gmv_share": 0.6597,
+      "avg_gmv": 5169.4,
+      "avg_recency_days": 12.0,
+      "avg_frequency": 10.0
     },
     {
       "segment": "一般保持",
-      "customers": 1175.0,
+      "customers": 1174.0,
       "customer_share": 0.2709,
-      "gmv": 1385157.61,
-      "gmv_share": 0.1554,
-      "avg_gmv": 1178.86
+      "gmv": 1522408.12,
+      "gmv_share": 0.1738,
+      "avg_gmv": 1296.77,
+      "avg_recency_days": 41.0,
+      "avg_frequency": 2.9
     },
     {
       "segment": "已流失",
-      "customers": 1132.0,
-      "customer_share": 0.2609,
-      "gmv": 530488.49,
-      "gmv_share": 0.0595,
-      "avg_gmv": 468.63
-    },
-    {
-      "segment": "沉睡",
-      "customers": 392.0,
-      "customer_share": 0.0904,
-      "gmv": 430052.37,
-      "gmv_share": 0.0483,
-      "avg_gmv": 1097.07
+      "customers": 1081.0,
+      "customer_share": 0.2494,
+      "gmv": 517793.45,
+      "gmv_share": 0.0591,
+      "avg_gmv": 478.99,
+      "avg_recency_days": 216.0,
+      "avg_frequency": 1.1
     },
     {
       "segment": "重要挽留",
-      "customers": 212.0,
-      "customer_share": 0.0489,
-      "gmv": 389666.73,
-      "gmv_share": 0.0437,
-      "avg_gmv": 1838.05
+      "customers": 282.0,
+      "customer_share": 0.0651,
+      "gmv": 482719.65,
+      "gmv_share": 0.0551,
+      "avg_gmv": 1711.77,
+      "avg_recency_days": 135.0,
+      "avg_frequency": 4.8
+    },
+    {
+      "segment": "沉睡",
+      "customers": 371.0,
+      "customer_share": 0.0856,
+      "gmv": 324359.38,
+      "gmv_share": 0.037,
+      "avg_gmv": 874.28,
+      "avg_recency_days": 162.0,
+      "avg_frequency": 2.3
     },
     {
       "segment": "新客户",
-      "customers": 255.0,
-      "customer_share": 0.0588,
-      "gmv": 256539.51,
-      "gmv_share": 0.0288,
-      "avg_gmv": 1006.04
+      "customers": 308.0,
+      "customer_share": 0.0711,
+      "gmv": 134393.39,
+      "gmv_share": 0.0153,
+      "avg_gmv": 436.34,
+      "avg_recency_days": 18.0,
+      "avg_frequency": 1.2
     }
   ]
 }
