@@ -1,4 +1,4 @@
--- ============================================================
+﻿-- ============================================================
 -- 02 分析主表 + 各主题汇总
 -- ============================================================
 
@@ -14,7 +14,7 @@
 --      且平均速度 ≤ 60 mph     物理上不可能：原数据最大里程 312,722 英里，
 --                              有 421 行速度超过 60 mph，不剔除会污染均值
 CREATE OR REPLACE TABLE dim_trip_clean AS
-SELECT
+SELECT DISTINCT
     tpep_pickup_datetime  AS pickup_time,
     tpep_dropoff_datetime AS dropoff_time,
     DATE_DIFF('second', tpep_pickup_datetime, tpep_dropoff_datetime) / 60.0 AS duration_min,
@@ -83,3 +83,4 @@ SELECT
 FROM dim_trip_clean
 GROUP BY 1
 ORDER BY 1;
+

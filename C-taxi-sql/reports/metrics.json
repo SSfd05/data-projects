@@ -1,6 +1,6 @@
 {
   "total_rows": 9554778,
-  "clean_rows": 9199100,
+  "clean_rows": 9199099,
   "clean_ratio": 0.9628,
   "bad_distance": 215764,
   "bad_duration": 2801,
@@ -12,7 +12,7 @@
   "payment": [
     {
       "payment_type": 1.0,
-      "trips": 7180907.0,
+      "trips": 7180906.0,
       "share": 0.7806,
       "avg_tip": 4.19,
       "tip_rate": 0.2255
